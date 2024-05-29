@@ -7,7 +7,7 @@ A aplicação Techtaste é um aplicativo iOS que funciona como uma lista de prat
 ## 🔨 Funcionalidades do projeto
 
 - Visualizar os pratos disponíveis em formato de tabela;
-- Navegar para uma lista de detalhes de um prat.
+- Navegar para uma lista de detalhes de um prato.
 
 ## ✔️ Técnicas e tecnologias
 
