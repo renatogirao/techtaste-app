@@ -1,0 +1,163 @@
+[
+    {
+        "id": 0,
+        "name": "Batata Chips",
+        "description": "Deliciosas batatas chips crocantes, perfeitas para um lanche rápido.",
+        "image": "potato-chips",
+        "price": 5.99,
+        "category": "snack"
+    },
+    {
+        "id": 1,
+        "name": "Tacos de Camarão",
+        "description": "Tacos crocantes recheados com camarão temperado, alface, tomate e queijo cheddar.",
+        "image": "shrimp-tacos",
+        "price": 12.99,
+        "category": "main"
+    },
+    {
+        "id": 2,
+        "name": "Lasanha de Legumes",
+        "description": "Camadas de massa fresca intercaladas com legumes assados e molho de tomate caseiro.",
+        "image": "vegetable-lasagna",
+        "price": 17.99,
+        "category": "pasta"
+    },
+    {
+        "id": 3,
+        "name": "Torta de Maçã",
+        "description": "Torta caseira de maçã, feita com maçãs frescas, canela e uma crosta de massa folhada.",
+        "image": "apple-pie",
+        "price": 14.99,
+        "category": "dessert"
+    },
+    {
+        "id": 4,
+        "name": "Smoothie de Frutas Tropicais",
+        "description": "Um refrescante smoothie feito com uma mistura de frutas tropicais como manga, abacaxi e banana.",
+        "image": "tropical-smoothie",
+        "price": 7.99,
+        "category": "drink"
+    },
+    {
+        "id": 5,
+        "name": "Amendoim Torrado",
+        "description": "Amendoim torrado e salgado, perfeito para petiscar a qualquer momento.",
+        "image": "roasted-peanuts",
+        "price": 4.99,
+        "category": "snack"
+    },
+    {
+        "id": 6,
+        "name": "Filé Mignon Grelhado",
+        "description": "Suculentos filés de mignon grelhados, servidos com molho de ervas e batatas rústicas.",
+        "image": "grilled-filet-mignon",
+        "price": 32.99,
+        "category": "main"
+    },
+    {
+        "id": 7,
+        "name": "Ravioli de Queijo",
+        "description": "Ravioli recheado com uma cremosa mistura de queijos italianos, coberto com molho de tomate e manjericão fresco.",
+        "image": "cheese-ravioli",
+        "price": 21.99,
+        "category": "pasta"
+    },
+    {
+        "id": 8,
+        "name": "Mousse de Chocolate",
+        "description": "Uma deliciosa mousse de chocolate meio amargo, cremosa e indulgente.",
+        "image": "chocolate-mousse",
+        "price": 10.99,
+        "category": "dessert"
+    },
+    {
+        "id": 9,
+        "name": "Chá Gelado de Pêssego",
+        "description": "Chá preto gelado adoçado, com suco natural de pêssego e fatias da fruta para decorar.",
+        "image": "peach-iced-tea",
+        "price": 6.99,
+        "category": "drink"
+    },
+    {
+        "id": 10,
+        "name": "Mix de Castanhas",
+        "description": "Uma mistura saudável de castanhas, incluindo amêndoas, castanhas de caju e nozes.",
+        "image": "nut-mix",
+        "price": 8.99,
+        "category": "snack"
+    },
+    {
+        "id": 11,
+        "name": "Salmão ao Molho de Maracujá",
+        "description": "Filé de salmão grelhado coberto com um molho tropical de maracujá, servido com arroz branco.",
+        "image": "salmon-passion-fruit",
+        "price": 28.99,
+        "category": "main"
+    },
+    {
+        "id": 12,
+        "name": "Fettuccine Alfredo",
+        "description": "Macarrão fettuccine cremoso em um molho de queijo parmesão e manteiga.",
+        "image": "fettuccine-alfredo",
+        "price": 18.99,
+        "category": "pasta"
+    },
+    {
+        "id": 13,
+        "name": "Cheesecake de Morango",
+        "description": "Uma fatia generosa de cheesecake cremoso com um topo de compota de morango.",
+        "image": "strawberry-cheesecake",
+        "price": 12.99,
+        "category": "dessert"
+    },
+    {
+        "id": 14,
+        "name": "Café Gelado",
+        "description": "Café espresso forte misturado com gelo, açúcar e leite, perfeito para dias quentes.",
+        "image": "iced-coffee",
+        "price": 5.99,
+        "category": "drink"
+    },
+    {
+        "id": 15,
+        "name": "Pipoca Doce",
+        "description": "Pipoca estourada coberta com uma deliciosa camada de caramelo.",
+        "image": "caramel-popcorn",
+        "price": 6.99,
+        "category": "snack"
+    },
+    {
+        "id": 16,
+        "name": "Costeletas de Cordeiro Assadas",
+        "description": "Costeletas de cordeiro marinadas em ervas mediterrâneas e assadas até ficarem macias e suculentas.",
+        "image": "roasted-lamb-chops",
+        "price": 35.99,
+        "category": "main"
+    },
+    {
+        "id": 17,
+        "name": "Rigatoni à Carbonara",
+        "description": "Massa rigatoni em um molho cremoso de queijo parmesão, bacon crocante e pimenta preta moída.",
+        "image": "rigatoni-carbonara",
+        "price": 19.99,
+        "category": "pasta"
+    },
+    {
+        "id": 18,
+        "name": "Pudim de Leite Condensado",
+        "description": "Um clássico pudim brasileiro, feito com leite condensado, leite e ovos, coberto com uma calda de caramelo.",
+        "image": "condensed-milk-pudding",
+        "price": 11.99,
+        "category": "dessert"
+    },
+    {
+        "id": 19,
+        "name": "Suco de Melancia",
+        "description": "Suco refrescante de melancia fresca, perfeito para saciar a sede em um dia quente de verão.",
+        "image": "watermelon-juice",
+        "price": 4.99,
+        "category": "drink"
+    }
+]
+ 
