@@ -9,20 +9,32 @@ import UIKit
 
 class ProductsListViewModel {
     
-    var products: [Product] = []
-    private var productsRepository: ProductsRepository
-
-    init(productsRepository: ProductsRepository = ProductsRepository()) {
-        self.productsRepository = productsRepository
+    var products: Observable<[Product]> = Observable([])
+    var isLoading: Observable<Bool> = Observable(false)
+    
+    private var networkingManager: NetworkingManager
+    
+    init(networkingManager: NetworkingManager = NetworkingManager()) {
+        self.networkingManager = networkingManager
     }
     
     func getAllProducts() {
-        if let products = productsRepository.loadProducts() {
-            self.products = products
+        isLoading.value = true
+        networkingManager.getProductsList { [weak self] result in
+            guard let self else { return }
+            self.isLoading.value = false
+            switch result {
+            case .success(let products):
+                DispatchQueue.main.async {
+                    self.products.value = products
+                }
+            case .failure(let failure):
+                print("Ocorreu um erro ao obter os produtos: \(failure.localizedDescription)")
+            }
         }
     }
-    func getNumberOfRowsOfTableView() -> Int {
-        return products.count
-    }
     
+    func getNumberOfRowsOfTableView() -> Int {
+        return products.value?.count ?? 0
+    }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class ProductsListViewController: UIViewController {
     
-//    private var products: [Product] = []
+    private var products: [Product] = []
 //    private var productsRepository: ProductsRepository
 //
     private var viewModel: ProductsListViewModel
@@ -31,6 +31,12 @@ class ProductsListViewController: UIViewController {
         tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
+    
+    private var activityIndicatorView: UIActivityIndicatorView = {
+        let activityIndicatorView = UIActivityIndicatorView(style: .medium)
+        activityIndicatorView.color = .white
+        return activityIndicatorView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +44,7 @@ class ProductsListViewController: UIViewController {
         setupUI()
         addSubviews()
         setupConstraints()
+        bindViewModel()
         getProducts()
     }
     
@@ -55,20 +62,47 @@ class ProductsListViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(tableView)
+        view.addSubview(activityIndicatorView)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16.0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24.0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24.0),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            activityIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
     private func getProducts() {
         viewModel.getAllProducts()
+        tableView.reloadData()
+    }
+    
+    private func bindViewModel() {
+        bindProducts()
+        bindLoading()
+    }
+    
+    private func bindProducts() {
+        viewModel.products.bind { [weak self] products in
+            guard let self = self, let products else { return }
+            self.products = products
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func bindLoading() {
+        viewModel.isLoading.bind { [weak self] isLoading in
+            guard let self, let isLoading else { return }
+            if isLoading {
+                self.activityIndicatorView.startAnimating()
+            } else {
+                self.activityIndicatorView.stopAnimating()
+            }
+        }
     }
 }
 
@@ -79,7 +113,7 @@ extension ProductsListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as? ProductsListTableViewCell else { return UITableViewCell() }
-        let product = viewModel.products[indexPath.row]
+        let product = products[indexPath.row]
         cell.configure(with: product)
         return cell
     }
